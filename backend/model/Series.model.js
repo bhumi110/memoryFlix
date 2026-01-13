@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose =require("mongoose");
 
 const seriesSchema = new mongoose.Schema(
   {
@@ -28,4 +28,7 @@ const seriesSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Series", seriesSchema);
+seriesSchema.index({ userId: 1, createdAt: -1 });
+seriesSchema.index({ title: "text", description: "text" });
+
+module.exports=mongoose.model("Series", seriesSchema);

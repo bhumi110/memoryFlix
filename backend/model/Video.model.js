@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const videoSchema = new mongoose.Schema(
   {
@@ -11,11 +11,15 @@ const videoSchema = new mongoose.Schema(
 
     title: {
       type: String,
-      required: true
+      required: true,
+      trim: true,
+      maxlength: 120
     },
 
     description: {
-      type: String
+      type: String,
+      trim: true,
+      maxlength: 1000
     },
 
     videoUrl: {
@@ -55,7 +59,7 @@ const videoSchema = new mongoose.Schema(
 
     recordedAt: {
       type: Date,
-      required: true
+      default: Date.now
     }
   },
   {
@@ -67,4 +71,4 @@ const videoSchema = new mongoose.Schema(
 videoSchema.index({ userId: 1, createdAt: -1 });
 videoSchema.index({ title: "text", description: "text" });
 
-export default mongoose.model("Video", videoSchema);
+module.exports = mongoose.model("Video", videoSchema);
