@@ -11,6 +11,7 @@ app.get("/", (req, res) => {
   res.status(200).send("MemoryFlix API is running!!!!!!!!!!!!!!");
 });
 
+require("./config/google");
 const authRoutes=require("./routes/auth.routes.js");
 app.use("/auth", authRoutes);
 
