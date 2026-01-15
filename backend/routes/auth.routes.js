@@ -9,21 +9,21 @@ router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 router.get("/me", authMiddleware, authController.getMe);
 
-router.get(
-  "/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
-);
+// router.get(
+//   "/google",
+//   passport.authenticate("google", { scope: ["profile", "email"] })
+// );
 
-router.get(
-  "/google/callback",
-  passport.authenticate("google", { session: false }),
-  (req, res) => {
-    const token = generateToken(req.user._id);
+// router.get(
+//   "/google/callback",
+//   passport.authenticate("google", { session: false }),
+//   (req, res) => {
+//     const token = generateToken(req.user._id);
 
-    res.redirect(
-      `http://localhost:8080/auth-success?token=${token}`
-    );
-  }
-);
+//     res.redirect(
+//       `http://localhost:8080/auth-success?token=${token}`
+//     );
+//   }
+// );
 
 module.exports= router;

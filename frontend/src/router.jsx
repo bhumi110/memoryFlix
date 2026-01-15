@@ -1,69 +1,41 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Login from "./pages/Login/Login";
-import Register from "./pages/Signup/Signup";
-import AuthSuccess from "./pages/Auth/AuthSuccess";
-
+import Landing from "./pages/Landing";
+import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
 import Profiles from "./pages/Profiles";
-import Browse from "./pages/Browse";
-import SeriesDetails from "./pages/SeriesDetails";
-import Watch from "./pages/Watch";
-
+import Browser from "./pages/Browser";
 import ProtectedRoute from "./layouts/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
+    path: "/",
+    element: <Landing />,
+  },
+  {
     path: "/login",
-    element: <Login />
+    element: <Login />,
   },
   {
-    path: "/register",
-    element: <Register />
+    path: "/signup",
+    element: <Signup />,
   },
-  {
-    path: "/auth-success",
-    element: <AuthSuccess />
-  },
-
-  // AUTH REQUIRED
   {
     path: "/profiles",
     element: (
       <ProtectedRoute>
         <Profiles />
       </ProtectedRoute>
-    )
+    ),
   },
   {
     path: "/browse",
     element: (
       <ProtectedRoute>
-        <Browse />
+        <Browser />
       </ProtectedRoute>
-    )
+    ),
   },
-  {
-    path: "/series/:id",
-    element: (
-      <ProtectedRoute>
-        <SeriesDetails />
-      </ProtectedRoute>
-    )
-  },
-  {
-    path: "/watch/:videoId",
-    element: (
-      <ProtectedRoute>
-        <Watch />
-      </ProtectedRoute>
-    )
-  },
-
-  // fallback
-  {
-    path: "*",
-    element: <Login />
-  }
 ]);
 
 export default router;

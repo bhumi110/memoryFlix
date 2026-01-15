@@ -1,16 +1,31 @@
+import { useEffect, useState } from "react";
+import { getAllSeries } from "../api/series.api";
 import Navbar from "../components/Navbar/Navbar";
-import Row from "../components/Row/Row";
 
-const Browse = () => {
+const Browser = () => {
+  const [series, setSeries] = useState([]);
+
+  useEffect(() => {
+    getAllSeries().then(res => setSeries(res.data));
+  }, []);
+
   return (
-    <div className="bg-black min-h-screen">
+    <>
       <Navbar />
+      <div style={{ padding: "80px 40px", color: "#fff" }}>
+        <h2>Series</h2>
 
-      <div className="pt-20">
-        <Row title="All Videos" />
+        <div style={{ display: "flex", gap: 20 }}>
+          {series.map(s => (
+            <div key={s._id}>
+              <img src={s.coverImage} width="200" />
+              <p>{s.title}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default Browse;
+export default Browser;

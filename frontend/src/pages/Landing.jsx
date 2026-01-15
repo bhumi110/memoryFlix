@@ -1,115 +1,85 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "../styles/landing.css";
 
 const Landing = () => {
-  const navigate = useNavigate();
-
   return (
-    <div className="bg-black text-white">
-      {/* HERO SECTION */}
-      <section className="relative min-h-screen">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/80 to-black" />
-        <div className="absolute inset-0 bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/6e8c9d40.jpg')] bg-cover bg-center opacity-30" />
+    <div className="landing">
 
-        {/* Navbar */}
-        <div className="relative z-10 flex justify-between items-center px-12 py-6">
-          <h1 className="text-2xl font-bold text-red-600">MEMORYFLIX</h1>
-          <button
-            onClick={() => navigate("/login")}
-            className="text-sm hover:underline"
-          >
-            Sign In
-          </button>
-        </div>
+      {/* NAVBAR */}
+      <nav className="landing-nav">
+        <h1 className="logo" onClick={() => navigate("/")}>MEMORYFLIX</h1>
+        <Link to="/login" className="nav-signin">Sign In</Link>
+      </nav>
 
-        {/* Hero Content */}
-        <div className="relative z-10 flex flex-col justify-center px-12 mt-24 max-w-3xl">
-          <h2 className="text-5xl md:text-6xl font-extrabold leading-tight">
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>
             Your life, stored <br />
-            like a <span className="text-red-600">series</span>.
-          </h2>
+            like a <span>series</span>.
+          </h1>
 
-          <p className="text-gray-300 mt-6 text-lg">
-            A private, cinematic vault for your most precious memories.  
+          <p>
+            A private, cinematic vault for your most precious memories.
             Watch your life unfold like a Netflix original.
           </p>
 
-          <div className="flex gap-4 mt-8">
-            <button
-              onClick={() => navigate("/register")}
-              className="bg-red-600 px-6 py-3 rounded font-semibold hover:bg-red-700"
-            >
-              ▶ Get Started
-            </button>
+          <div className="hero-actions">
+            <Link to="/signup" className="btn-primary"><i className="fa-solid fa-play"></i> Get Started</Link>
+            <Link to="/login" className="btn-secondary">Sign In</Link>
+          </div>
+        </div>
 
-            <button
-              onClick={() => navigate("/login")}
-              className="border border-gray-500 px-6 py-3 rounded hover:bg-white hover:text-black"
-            >
-              Sign In
-            </button>
+        <div className="scroll-indicator"></div>
+      </section>
+
+      {/* FEATURES */}
+      <section className="features">
+        <h2>
+          Your memories deserve the <span>spotlight</span>
+        </h2>
+
+        <div className="feature-grid">
+          <div className="feature-card highlight">
+            
+            <h3><i className="fa-solid fa-lock" style={{color: "#db0606"}}></i> Private by Design</h3>
+            <p>
+              Your videos are yours alone. No sharing, no audience,
+              no social pressure.
+            </p>
+          </div>
+
+          <div className="feature-card highlight">
+            <h3><i class="fa-solid fa-film" style={{color: "#db0606"}}></i> Organize into Series</h3>
+            <p>
+              Group moments into seasons and episodes.
+              Turn your life into binge worthy content.
+            </p>
+          </div>
+
+          <div className="feature-card highlight">
+            <h3><i class="fa-solid fa-heart" style={{color: "#db0606"}}></i> Watch Like Netflix</h3>
+            <p>
+              Horizontal rows, cinematic thumbnails,
+              smooth playback, but personal.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* FEATURES SECTION */}
-      <section className="px-12 py-24 grid md:grid-cols-3 gap-8">
-        {[
-          {
-            title: "Private by Design",
-            desc: "Your videos are yours alone. No sharing, no social features. Just you and your memories.",
-          },
-          {
-            title: "Organize into Series",
-            desc: "Group related memories into seasons and episodes. Turn your life into binge-worthy content.",
-            highlight: true,
-          },
-          {
-            title: "Watch Like Netflix",
-            desc: "Horizontal rows, beautiful thumbnails, smooth playback. The streaming experience, but personal.",
-          },
-        ].map((item, i) => (
-          <div
-            key={i}
-            className={`border rounded-xl p-6 bg-black/40 ${
-              item.highlight
-                ? "border-red-600"
-                : "border-gray-800"
-            }`}
-          >
-            <h3 className="text-xl font-semibold mb-3">
-              {item.title}
-            </h3>
-            <p className="text-gray-400 text-sm">
-              {item.desc}
-            </p>
-          </div>
-        ))}
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="text-center py-24 bg-gradient-to-t from-black via-black/90 to-black">
-        <h2 className="text-4xl font-bold">
-          Ready to start your{" "}
-          <span className="text-red-600">story</span>?
+      {/* CTA */}
+      <section className="cta">
+        <h2>
+          Ready to start your <span>story</span>?
         </h2>
-
-        <p className="text-gray-400 mt-4">
-          Begin capturing and organizing your memories today.
-        </p>
-
-        <button
-          onClick={() => navigate("/register")}
-          className="mt-8 bg-red-600 px-8 py-4 rounded font-semibold hover:bg-red-700"
-        >
-          ▶ Get Started Free
-        </button>
+        <p>Begin capturing and organizing your memories today.</p>
+        <Link to="/signup" className="btn-primary"><i className="fa-solid fa-play"></i> Get Started Free</Link>
       </section>
 
       {/* FOOTER */}
-      <footer className="flex justify-between px-12 py-6 text-sm text-gray-500 border-t border-gray-800">
-        <span className="text-red-600 font-semibold">MEMORYFLIX</span>
-        <span>© 2026 MemoryFlix. Your memories, your story.</span>
+      <footer className="footer">
+        <span>MEMORYFLIX</span>
+        <span>© 2026 Memoryflix. Your memories, your story.</span>
       </footer>
     </div>
   );

@@ -1,0 +1,83 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* NETFLIX RED */
+:root {
+  --netflix-red: #e50914;
+}
+
+/* BUTTONS */
+.btn-netflix {
+  background-color: var(--netflix-red);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+}
+
+.btn-netflix:hover {
+  background-color: #f6121d;
+}
+
+.btn-outline-netflix {
+  border: 1px solid #aaa;
+  color: #fff;
+  background: transparent;
+}
+
+.btn-outline-netflix:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* INPUTS */
+.netflix-input {
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 12px;
+}
+
+.netflix-input:focus {
+  outline: none;
+  border-color: var(--netflix-red);
+}
+
+/* CARDS */
+.netflix-card {
+  background: #141414;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.netflix-card:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE TEXT */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.netflix-card {
+  background: #141414;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.netflix-card:hover {
+  transform: scale(1.05);
+}

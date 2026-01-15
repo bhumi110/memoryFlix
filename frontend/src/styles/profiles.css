@@ -1,0 +1,95 @@
+.profiles-page {
+  height: 100vh;
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  color: white;
+  position: relative;
+}
+
+/* LOGO */
+.profiles-logo {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  color: #e50914;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* CENTER */
+.profiles-center {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profiles-center h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+/* PROFILES */
+.profiles-list {
+  display: flex;
+  gap: 40px;
+}
+
+.profile-card {
+  text-align: center;
+  cursor: pointer;
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, #e50914, #b20710);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, border 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.profile-card.active:hover .profile-avatar {
+  transform: scale(1.05);
+  border: 3px solid white;
+}
+
+.profile-card p {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* DISABLED */
+.profile-card.disabled {
+  cursor: not-allowed;
+}
+
+.disabled-avatar {
+  background: #111;
+  border: 2px dashed #333;
+}
+
+.disabled-text {
+  color: #555;
+}
+
+/* MANAGE BUTTON */
+.manage-btn {
+  margin-top: 50px;
+  padding: 10px 30px;
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.manage-btn:hover {
+  border-color: #fff;
+  color: #fff;
+}
