@@ -1,0 +1,80 @@
+.browse-page {
+  background: #000;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url("/your-bg-image.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85) 30%,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.85)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  padding-left: 4rem;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: #e50914;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* BUTTONS */
+.primary-btn {
+  background-color: #e50914 !important;
+  padding: 12px 28px !important;
+  font-size: 1rem !important;
+  text-transform: none !important;
+}
+
+.secondary-btn {
+  color: #fff !important;
+  border-color: #fff !important;
+  padding: 12px 28px !important;
+  margin-left: 1rem !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content {
+    padding-left: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+}

@@ -50,7 +50,7 @@ const Landing = () => {
           </div>
 
           <div className="feature-card highlight">
-            <h3><i class="fa-solid fa-film" style={{color: "#db0606"}}></i> Organize into Series</h3>
+            <h3><i className="fa-solid fa-film" style={{color: "#db0606"}}></i> Organize into Series</h3>
             <p>
               Group moments into seasons and episodes.
               Turn your life into binge worthy content.
@@ -58,7 +58,7 @@ const Landing = () => {
           </div>
 
           <div className="feature-card highlight">
-            <h3><i class="fa-solid fa-heart" style={{color: "#db0606"}}></i> Watch Like Netflix</h3>
+            <h3><i className="fa-solid fa-heart" style={{color: "#db0606"}}></i> Watch Like Netflix</h3>
             <p>
               Horizontal rows, cinematic thumbnails,
               smooth playback, but personal.

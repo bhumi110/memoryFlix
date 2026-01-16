@@ -36,7 +36,7 @@
   height: 100vh;
   background:
     linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6)),
-    url("../assets/images/landing-bg.jpg") center/cover no-repeat;
+    url("../assets/images/landing-bg.jpg") center/cover no-repeat !important;
   display: flex;
   align-items: center;
   padding: 0 60px;

@@ -19,7 +19,7 @@ const Login = () => {
     console.log("LOGGED IN USER:", res.data.user);
     console.log("TOKEN:", res.data.token);
 
-    login(res.data.token);
+    login(res.data.token,res.data.user);
     navigate("/profiles");
   } catch (err) {
     console.error("LOGIN ERROR:", err.response?.data || err.message);
