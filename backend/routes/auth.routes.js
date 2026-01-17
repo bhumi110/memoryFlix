@@ -8,6 +8,7 @@ const authMiddleware= require("../middleware/auth.middleware.js");
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 router.get("/me", authMiddleware, authController.getMe);
+router.get("/status",authMiddleware, authController.status);
 
 // router.get(
 //   "/google",

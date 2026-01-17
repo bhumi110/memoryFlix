@@ -59,7 +59,6 @@ exports.getSeriesById = async (req, res) => {
   }
 };
 
-
 //----------------------update----------------------------------
 exports.updateSeries = async (req, res) => {
   try {

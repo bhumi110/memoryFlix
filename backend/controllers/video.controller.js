@@ -4,6 +4,9 @@ const Video = require("../model/Video.model");
 //-----------------upload------------------------------------
 exports.uploadVideo = async (req, res) => {
   try {
+    console.log("USER:", req.user);
+    console.log("FILES:", req.files);
+    console.log("BODY:", req.body);
     if (!req.files || !req.files.video) {
       return res.status(400).json({ message: "Video file is required" });
     }

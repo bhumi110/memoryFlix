@@ -1,9 +1,11 @@
 import { Button } from "@mui/material";
 import { useAuth } from "../context/AuthContext";
 import "../styles/emptyBrowse.css";
+import { Link } from "react-router-dom";
 
 const EmptyBrowse = () => {
-  const { user } = useAuth();
+  const { user,loading } = useAuth();
+  if (loading) return null;
 console.log("USER OBJECT:", user);
 
   return (
@@ -11,16 +13,16 @@ console.log("USER OBJECT:", user);
       <div className="empty-overlay" />
 
       <div className="empty-content">
-        <h1>Welcome {user?.name}</h1>
+        <h1>Welcome<span> {user?.name}</span> </h1>
         <p>
           Your memory vault is empty.
           <br />
           Start by creating your first video memory.
         </p>
 
-        <Button variant="contained" className="create-memory-btn">
+        < Link to="/create" className="create-memory-btn" >
           + Create Memory
-        </Button>
+        </Link>
       </div>
     </div>
   );

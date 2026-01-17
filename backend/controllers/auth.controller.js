@@ -1,5 +1,7 @@
  const bcrypt=require("bcryptjs");
 const User=require("../model/User.model.js");
+const Series=require("../model/Series.model.js");
+const Video=require("../model/Video.model.js");
 const { generateToken }=require("../utils/jwt.js");
 
 //-----------------signup---------------------------------------------
@@ -68,4 +70,17 @@ exports.login = async (req, res) => {
 //---------------logged in user fetch-------------------------------
 exports.getMe = async (req, res) => {
   res.json(req.user);
+};
+
+
+//-----------check if user has any post--------------------
+exports.status= async (req, res) => {
+  const seriesCount = await Series.countDocuments({ userId: req.user._id });
+const videoCount = await Video.countDocuments({ userId: req.user._id });
+
+  res.json({
+    hasSeries: seriesCount > 0,
+    hasVideos: videoCount > 0,
+    shouldBrowse: seriesCount > 0 || videoCount > 0,
+  });
 };
