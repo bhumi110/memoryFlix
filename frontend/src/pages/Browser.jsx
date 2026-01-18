@@ -10,7 +10,7 @@ const Browse = () => {
     // const res = await getUserVideos();
     // setVideos(res.data);
 
-    setVideos([]); // 👈 empty = EmptyBrowse
+    setVideos([]); //empty = EmptyBrowse
   }, []);
 
   return (
