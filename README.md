@@ -1,2 +1,2 @@
-# memoryFlix
+# MemoryFlix
 video diary
