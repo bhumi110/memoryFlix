@@ -1,2 +1,2 @@
-# memoryFlix
-video diary
+# MemoryFlix
+digital diary
