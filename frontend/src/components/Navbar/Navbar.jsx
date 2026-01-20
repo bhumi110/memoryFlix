@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? "navbar--black" : ""}`}>
       <div className="navbar__left">
         <Link to="/" className="navbar__logo">
-          VideoDiary
+          MemoryFlix
         </Link>
 
         <Link to="/" className="navbar__link">Home</Link>
