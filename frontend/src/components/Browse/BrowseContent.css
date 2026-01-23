@@ -1,0 +1,50 @@
+.browse-page {
+  min-height: 100vh;
+  background-color: #0b0b0b;
+  color: #ffffff;
+  padding: 24px;
+}
+
+/* Mood section */
+.mood-row {
+  margin-bottom: 32px;
+}
+
+.mood-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+/* Horizontal row */
+.video-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.video-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Video card */
+.video-card {
+  min-width: 180px;
+  height: 80px;
+  background: #141414;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.video-card:hover {
+  background: #1f1f1f;
+  transform: scale(1.05);
+}

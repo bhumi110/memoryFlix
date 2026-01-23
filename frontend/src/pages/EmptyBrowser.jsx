@@ -21,7 +21,7 @@ console.log("USER OBJECT:", user);
         </p>
 
         < Link to="/create" className="create-memory-btn" >
-          + Create Memory
+          <i className="fa-solid fa-plus"></i> Create Memory
         </Link>
       </div>
     </div>

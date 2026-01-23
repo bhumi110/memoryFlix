@@ -21,8 +21,8 @@ const Navbar = () => {
           MemoryFlix
         </Link>
 
-        <Link to="/" className="navbar__link">Home</Link>
-        <Link to="/create-series" className="navbar__link">Create</Link>
+        <Link to="/browse" className="navbar__link">Home</Link>
+        <Link to="/create" className="navbar__link">Create</Link>
       </div>
 
       <div className="navbar__right">

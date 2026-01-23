@@ -8,7 +8,7 @@ const Landing = () => {
       {/* NAVBAR */}
       <nav className="landing-nav">
         <h1 className="logo" onClick={() => navigate("/")}>MEMORYFLIX</h1>
-        <Link to="/login" className="nav-signin">Sign In</Link>
+        {/* <Link to="/login" className="nav-signin">Sign In</Link> */}
       </nav>
 
       {/* HERO */}
@@ -26,7 +26,7 @@ const Landing = () => {
 
           <div className="hero-actions">
             <Link to="/signup" className="btn-primary"><i className="fa-solid fa-play"></i> Get Started</Link>
-            <Link to="/login" className="btn-secondary">Sign In</Link>
+            <Link to="/login" className="btn-secondary">Sign In <i className="fa-solid fa-right-to-bracket"></i></Link>
           </div>
         </div>
 
