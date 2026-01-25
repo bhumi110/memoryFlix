@@ -49,7 +49,7 @@ const Landing = () => {
           <div className="feature-card highlight">
             <SpotlightCard
               className="custom-spotlight-card"
-              spotlightColor="rgba(0, 229, 255, 0.2)"
+              spotlightColor="rgba(245, 5, 33,0.3)"
             >
               <h3>
                 <i
@@ -74,6 +74,10 @@ const Landing = () => {
           </div>
 
           <div className="feature-card highlight">
+            <SpotlightCard
+              className="custom-spotlight-card"
+              spotlightColor="rgba(245, 5, 33,0.3)"
+            >
             <h3>
               <i className="fa-solid fa-film" style={{ color: "#db0606" }}></i>{" "}
               Organize into Series
@@ -82,9 +86,14 @@ const Landing = () => {
               Group moments into seasons and episodes. Turn your life into binge
               worthy content.
             </p>
+            </SpotlightCard>
           </div>
 
           <div className="feature-card highlight">
+            <SpotlightCard
+              className="custom-spotlight-card"
+              spotlightColor="rgba(245, 5, 33,0.3)"
+            >
             <h3>
               <i className="fa-solid fa-heart" style={{ color: "#db0606" }}></i>{" "}
               Watch Like Netflix
@@ -93,6 +102,7 @@ const Landing = () => {
               Horizontal rows, cinematic thumbnails, smooth playback, but
               personal.
             </p>
+            </SpotlightCard>
           </div>
         </div>
       </section>

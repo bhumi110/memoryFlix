@@ -1,33 +1,48 @@
-
-import "../Browse/BrowseContent.css";
-
-const MOODS = ["calm", "happy", "sad", "healing", "confused", "hopeful"];
+import { useState } from "react";
+import MoodRow from "./MoodRow";
+import HeroBanner from "./HeroBanner";
+import VideoPreviewModal from "./VideoPreview";
+import "./BrowseContent.css";
 
 const BrowseContent = ({ videos }) => {
-  const getVideosByMood = (mood) =>
-    videos.filter((video) => video.mood === mood);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  if (!videos || videos.length === 0) return null;
+
+  const heroVideo = videos[0];
+
+  // group remaining videos by mood
+  const videosByMood = videos.slice(1).reduce((acc, video) => {
+    acc[video.mood] = acc[video.mood] || [];
+    acc[video.mood].push(video);
+    return acc;
+  }, {});
 
   return (
     <div className="browse-page">
-      {MOODS.map((mood) => {
-        const moodVideos = getVideosByMood(mood);
+      {/* HERO */}
+      <HeroBanner
+        video={heroVideo}
+        onPlay={() => setSelectedVideo(heroVideo)}
+      />
 
-        if (moodVideos.length === 0) return null;
+      {/* ROWS */}
+      {Object.entries(videosByMood).map(([mood, vids]) => (
+        <MoodRow
+          key={mood}
+          mood={mood}
+          videos={vids}
+          onSelect={setSelectedVideo}
+        />
+      ))}
 
-        return (
-          <div key={mood} className="mood-row">
-            <h2 className="mood-title">{mood.toUpperCase()}</h2>
-
-            <div className="video-row">
-              {moodVideos.map((video) => (
-                <div key={video._id} className="video-card">
-                  {video.title}
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      })}
+      {/* MODAL */}
+      {selectedVideo && (
+        <VideoPreviewModal
+          video={selectedVideo}
+          onClose={() => setSelectedVideo(null)}
+        />
+      )}
     </div>
   );
 };

@@ -1,11 +1,18 @@
 const express=require("express");
 const cors=require("cors");
 const app=express();
+const path = require("path");
+app.use(
+  "/uploads",
+  express.static(path.join(__dirname, "uploads"))
+);
+
 
 app.use(cors({
   origin: "http://localhost:5173",
   credentials: true,
 }));
+
 
 const videoRoutes = require("./routes/video.routes");
 app.use("/videos", videoRoutes);

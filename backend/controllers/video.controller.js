@@ -41,33 +41,24 @@ exports.uploadVideo = async (req, res) => {
 //-------homepage videos---------------------------------------
 exports.getVideos = async (req, res) => {
   try {
-    const { page = 1, limit = 20, mood, seriesId } = req.query;
-
-    const filter = {
-      userId: req.user._id,
-      isArchived: false
-    };
-
-    if (mood) filter.mood = mood;
-    if (seriesId) filter.seriesId = seriesId;
-
-    const videos = await Video.find(filter)
-      .sort({ createdAt: -1 })
-      .skip((page - 1) * limit)
-      .limit(Number(limit));
+    const videos = await Video.find({
+      userId: req.user.id 
+    }).sort({ createdAt: -1 });
 
     res.json(videos);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ message: "Failed to fetch videos" });
   }
 };
+
 
 //-----------------video play page---------------------------------------
 exports.getVideoById = async (req, res) => {
   try {
     const video = await Video.findOne({
       _id: req.params.id,
-      userId: req.user._id,
+      userId: req.user.id,
       isArchived: false
     });
 
@@ -93,7 +84,7 @@ exports.searchVideos = async (req, res) => {
 
     const results = await Video.find(
       {
-        userId: req.user._id,
+        userId: req.user.id,
         isArchived: false,
         $text: { $search: q }
       },
@@ -111,7 +102,7 @@ exports.searchVideos = async (req, res) => {
 exports.getSeriesVideos = async (req, res) => {
   try {
     const videos = await Video.find({
-      userId: req.user._id,
+      userId: req.user.id,
       seriesId: req.params.seriesId,
       isArchived: false
     }).sort({ seasonNumber: 1, episodeNumber: 1 });
@@ -146,7 +137,7 @@ exports.updateVideo = async (req, res) => {
 //------------------------delete videos-----------------------------------------
 exports.deleteVideo = async (req, res) => {
   try {
-    const video = await Video.findOneAndUpdate(
+    const video = await Video.findOneAndDelete(
       { _id: req.params.id, userId: req.user._id },
       { isArchived: true },
       { new: true }

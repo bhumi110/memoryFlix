@@ -1,0 +1,94 @@
+.hero-banner {
+  height: 85vh;
+  width: 100%;
+  position: relative;
+
+  background-size: cover;
+  background-position: center center; /* 🔥 FIX */
+  background-repeat: no-repeat;
+
+  margin-top: -97px;
+  padding-top: 68px;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 600px;
+  padding: 120px 60px 0;
+  color: white;
+}
+
+.hero-mood {
+  display: inline-block !important;
+  border: #f40612 !important;
+  background: #f3041052 !important;
+  color: white !important;
+  font-size: 12px;
+  font-weight: 600;
+  /* padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px; */
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  margin: 20px 0;
+}
+
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  margin-top: 24px;
+}
+
+.hero-play {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero-play:hover {
+  background: #8d030a;
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 70vh;
+    padding: 60px 16px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}

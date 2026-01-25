@@ -1,0 +1,121 @@
+.preview-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-modal {
+  width: 70%;
+  max-width: 1100px;
+  background: #141414;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.preview-hero {
+  position: relative;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+.preview-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 20, 20, 1),
+    rgba(20, 20, 20, 0.3),
+    rgba(20, 20, 20, 0)
+  );
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.preview-content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  max-width: 60%;
+}
+
+.preview-content h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.preview-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.match {
+  color: #46d369;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.preview-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.preview-actions .play-btn {
+  background: rgb(199, 3, 3);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 24px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  /* display: flex; */
+  align-items: center;
+  gap: 8px;
+  margin-right: 1rem;
+
+}
+
+.preview-actions .play-btn:hover{
+    background: rgb(160, 3, 3);
+}
+
+
+.preview-details {
+  padding: 24px 40px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+  .preview-modal {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .preview-content h1 {
+    font-size: 22px;
+  }
+
+  .preview-desc {
+    font-size: 14px;
+  }
+}

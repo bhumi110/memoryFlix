@@ -74,13 +74,19 @@ exports.getMe = async (req, res) => {
 
 
 //-----------check if user has any post--------------------
-exports.status= async (req, res) => {
-  const seriesCount = await Series.countDocuments({ userId: req.user._id });
-const videoCount = await Video.countDocuments({ userId: req.user._id });
+exports.status = async (req, res) => {
+  const seriesCount = await Series.countDocuments({
+    userId: req.user.id
+  });
+
+  const videoCount = await Video.countDocuments({
+    userId: req.user.id
+  });
 
   res.json({
     hasSeries: seriesCount > 0,
     hasVideos: videoCount > 0,
-    shouldBrowse: seriesCount > 0 || videoCount > 0,
+    shouldBrowse: seriesCount > 0 || videoCount > 0
   });
 };
+

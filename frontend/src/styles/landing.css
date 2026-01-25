@@ -124,17 +124,17 @@
   gap: 30px;
 }
 
-.feature-card {
+/* .feature-card {
   background: #111;
   padding: 30px;
   border-radius: 6px;
   border: 1px solid #222;
   text-align: left;
-}
+} */
 
-.feature-card.highlight {
+/* .feature-card.highlight {
   border-color: #e50914;
-}
+} */
 
 .feature-card h3 {
   margin-bottom: 12px;
