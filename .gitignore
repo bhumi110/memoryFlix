@@ -155,3 +155,7 @@ yarn-error.log*
 ORIG_HEAD
 *.orig
 *.backup
+
+/uploads
+/uploads/*
+!/uploads/.gitkeep
