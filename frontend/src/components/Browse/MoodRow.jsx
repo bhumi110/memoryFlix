@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./BrowseContent.css";
 import VideoPreviewModal from "./VideoPreview";
 
-const MoodRow = ({ mood, videos }) => {
+const MoodRow = ({ mood, videos, onSelect }) => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
@@ -14,7 +14,7 @@ const MoodRow = ({ mood, videos }) => {
           <div
             key={video._id}
             className="thumbnail-card"
-            onClick={() => setSelectedVideo(video)}
+            onClick={() => onSelect(video)}
           >
             <img
               src={`http://localhost:8080${video.thumbnailUrl}`}

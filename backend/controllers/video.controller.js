@@ -58,7 +58,7 @@ exports.getVideoById = async (req, res) => {
   try {
     const video = await Video.findOne({
       _id: req.params.id,
-      userId: req.user.id,
+      userId: req.user._id,
       isArchived: false
     });
 

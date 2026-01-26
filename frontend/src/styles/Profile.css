@@ -1,0 +1,254 @@
+/* PAGE */
+.profile-page {
+  min-height: 100vh;
+  background: #000;
+  color: white;
+  
+}
+
+/* HERO */
+.profile-hero {
+  background:
+    radial-gradient(circle at top left, rgba(229,9,20,0.28), transparent 45%),
+    linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.95));
+  padding: 48px 0 36px;
+  
+}
+
+/* BACK BUTTON */
+.back-btn {
+  margin-left: 40px;
+  color: #d1d1d1;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.85;
+}
+
+.back-btn:hover {
+  opacity: 1;
+}
+
+/* CONTENT */
+.profile-hero-content {
+  max-width: 900px;
+  margin: 36px auto 0;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* HEADER */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.profile-avatar {
+  width: 92px !important;
+  height: 92px !important;
+  background: #e50914 !important;
+  font-size: 38px !important;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-weight: 600;
+}
+
+.profile-subtitle {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* STATS */
+.profile-stats {
+  display: flex;
+  gap: 18px;
+}
+
+.stat-card {
+  width: 130px;
+  padding: 18px 0;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.stat-label {
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+/* ACTIONS */
+.profile-actions {
+  margin-top: 8px;
+}
+
+.primary-btn {
+  background: #e50914;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #f6121d;
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+.profile-footer {
+  margin: 60px auto 0;
+  max-width: 1100px;
+  padding: 20px 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* Tablets (≤ 900px) */
+@media (max-width: 900px) {
+  .profile-hero-content {
+    padding: 0 24px;
+    gap: 28px;
+  }
+
+  .profile-header {
+    gap: 18px;
+  }
+
+  .profile-avatar {
+    width: 76px !important;
+    height: 76px !important;
+    font-size: 30px !important;
+  }
+
+  .profile-name {
+    font-size: 1.8rem;
+  }
+
+  .profile-stats {
+    gap: 14px;
+  }
+
+  .stat-card {
+    width: 110px;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .profile-hero {
+    padding: 28px 0 24px;
+  }
+
+  .back-btn {
+    margin-left: 20px;
+    font-size: 13px;
+  }
+
+  .profile-hero-content {
+    padding: 0 20px;
+    gap: 22px;
+  }
+
+  /* Stack avatar + name */
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .profile-avatar {
+    width: 64px !important;
+    height: 64px !important;
+    font-size: 26px !important;
+  }
+
+  .profile-name {
+    font-size: 1.5rem;
+  }
+
+  .profile-subtitle {
+    font-size: 13px;
+  }
+
+  /* Stats → horizontal scroll (Netflix style) */
+  .profile-stats {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .profile-stats::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stat-card {
+    min-width: 120px;
+    flex-shrink: 0;
+  }
+
+  /* Center action button */
+  .profile-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .primary-btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  /* Footer */
+  .profile-footer {
+    padding: 16px 20px;
+    font-size: 12px;
+    margin-top: 40px;
+  }
+}
+
+/* Small phones (≤ 400px) */
+@media (max-width: 400px) {
+  .profile-name {
+    font-size: 1.35rem;
+  }
+
+  .stat-card {
+    min-width: 105px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+}

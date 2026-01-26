@@ -3,6 +3,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import "./VideoPreview.css";
 import { updateVideo, deleteVideo } from "../../api/video.api";
+import { useNavigate } from "react-router-dom";
 
 const VideoPreviewModal = ({ video, onClose, onDeleted }) => {
   if (!video) return null;
@@ -13,12 +14,10 @@ const VideoPreviewModal = ({ video, onClose, onDeleted }) => {
 
   const handleSave = async () => {
     await updateVideo(video._id, { title, description });
-
-    video.title = title;
-    video.description = description;
-
     setIsEditing(false);
   };
+
+  const navigate = useNavigate();
 
   const handleDelete = async () => {
     try {
@@ -32,7 +31,7 @@ const VideoPreviewModal = ({ video, onClose, onDeleted }) => {
       console.error("DELETE FAILED", err.response?.data || err);
       alert("Delete failed");
     }
-};
+  };
 
   return (
     <div className="preview-backdrop">
@@ -69,7 +68,12 @@ const VideoPreviewModal = ({ video, onClose, onDeleted }) => {
 
             <div className="preview-actions">
               {!isEditing && (
-                <button className="play-btn">
+                <button
+                  className="play-btn"
+                  onClick={() =>
+                    navigate(`/watch/${video._id}`, { state: { video } })
+                  }
+                >
                   <PlayArrowIcon /> Play
                 </button>
               )}

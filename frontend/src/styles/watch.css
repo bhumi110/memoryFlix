@@ -1,0 +1,77 @@
+.watch-container {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9999;
+}
+
+.watch-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: black;
+}
+
+/* TOP OVERLAY */
+.watch-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.watch-top.visible {
+  opacity: 1;
+}
+
+.watch-close {
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: rgb(175, 173, 173);
+  font-size: 22px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer !important;
+  z-index: 9999;    
+  pointer-events: all;
+}
+.watch-close:hover{
+    color: white;
+}
+
+.watch-meta {
+  color: white;
+}
+
+.watch-meta h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.watch-meta .episode {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .watch-meta h1 {
+    font-size: 16px;
+  }
+
+  .watch-top {
+    padding: 15px;
+  }
+}

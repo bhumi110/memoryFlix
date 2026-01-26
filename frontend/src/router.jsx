@@ -7,6 +7,8 @@ import Profiles from "./pages/Profiles";
 import Browser from "./pages/Browser";
 import Create from "./pages/Create";
 import ProtectedRoute from "./layouts/ProtectedRoute";
+import Watch from "./pages/Watch";
+import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,24 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
   },
+
+  {
+    path: "/watch/:id",
+    element: (
+      <ProtectedRoute>
+        <Watch />
+      </ProtectedRoute>
+    ),
+  },
+  {
+  path: "/profile",
+  element: (
+    <ProtectedRoute>
+      <Profile />
+    </ProtectedRoute>
+  ),
+}
 ]);
+
 
 export default router;
