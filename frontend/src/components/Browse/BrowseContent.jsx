@@ -2,31 +2,27 @@ import { useState } from "react";
 import MoodRow from "./MoodRow";
 import HeroBanner from "./HeroBanner";
 import VideoPreviewModal from "./VideoPreview";
+import ContinueWatchingRow from "./ContinueRow";
 import "./BrowseContent.css";
 
 const BrowseContent = ({ videos }) => {
-  const [allVideos, setAllVideos] = useState(videos);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   if (!videos || videos.length === 0) return null;
 
-  // Pick hero (featured)
+  // Pick hero
   const heroVideo = videos[0];
 
   const handleVideoDeleted = (videoId) => {
-    setAllVideos(prev =>
-      prev.filter(v => v._id !== videoId)
-    );
+    // optional: handle if needed later
   };
 
-  // Group ALL videos by mood (including hero)
+  // Group videos by mood
   const videosByMood = videos.reduce((acc, video) => {
     acc[video.mood] = acc[video.mood] || [];
     acc[video.mood].push(video);
     return acc;
   }, {});
-  
-
 
   return (
     <div className="browse-page">
@@ -36,7 +32,10 @@ const BrowseContent = ({ videos }) => {
         onPlay={() => setSelectedVideo(heroVideo)}
       />
 
-      {/* ROWS */}
+      {/* CONTINUE WATCHING (self-contained) */}
+      <ContinueWatchingRow />
+
+      {/* MOOD ROWS */}
       {Object.entries(videosByMood).map(([mood, vids]) => (
         <MoodRow
           key={mood}

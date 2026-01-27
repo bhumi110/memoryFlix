@@ -6,29 +6,29 @@ const Profiles = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="profiles-page">
+    <div className="memory-page">
       {/* LOGO */}
       <div className="profiles-logo">MEMORYFLIX</div>
 
       {/* CENTER CONTENT */}
-      <div className="profiles-center">
+      <div className="memory-center">
         <h1>Who's watching?</h1>
 
         <div className="profiles-list">
           {/* MAIN PROFILE */}
           <div
-            className="profile-card active"
+            className="memory-card active"
             onClick={() => navigate("/browse")}
           >
-            <div className="profile-avatar">
+            <div className="memory-avatar">
               <PersonOutlineIcon sx={{ fontSize: 60 }} />
             </div>
             <p>My Memories</p>
           </div>
 
           {/* ADD PROFILE (DISABLED) */}
-          <div className="profile-card disabled">
-            <div className="profile-avatar disabled-avatar">
+          <div className="memory-card disabled">
+            <div className="memory-avatar disabled-avatar">
               <AddIcon sx={{ fontSize: 50 }} />
             </div>
             <p className="disabled-text">Add Profile</p>
