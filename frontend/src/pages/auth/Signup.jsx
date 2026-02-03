@@ -91,11 +91,11 @@ const Signup = () => {
             </Button>
           </form>
 
-          <div className="auth-divider">OR</div>
+          {/* <div className="auth-divider">OR</div> */}
 
-          <Button fullWidth className="google-btn">
+          {/* <Button fullWidth className="google-btn">
             <i className="fa-brands fa-google"></i> Continue with Google
-          </Button>
+          </Button> */}
 
           <div className="auth-footer">
             Already have an account?{" "}

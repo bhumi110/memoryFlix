@@ -22,7 +22,7 @@ router.get("/status",authMiddleware, authController.status);
 //     const token = generateToken(req.user._id);
 
 //     res.redirect(
-//       `http://localhost:8080/auth-success?token=${token}`
+//       `http://localhost:5173/auth-success?token=${token}`
 //     );
 //   }
 // );

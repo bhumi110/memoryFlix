@@ -74,7 +74,7 @@ const Login = () => {
           <div className="auth-divider">OR</div>
 
           <Button fullWidth className="google-btn">
-            <i className="fa-brands fa-google"></i> Continue with Google
+             Continue with Google
           </Button>
 
           <div className="auth-footer">
